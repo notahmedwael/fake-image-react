@@ -18,7 +18,6 @@ const App = () => {
         mouseReact={false}
         amplitude={0.1}
         speed={1.0}
-        className="fixed inset-0 w-full h-full -z-10 pointer-events-none"
       />
     <Routes>
       <Route path="/" element={<Layout><Home /></Layout>} />

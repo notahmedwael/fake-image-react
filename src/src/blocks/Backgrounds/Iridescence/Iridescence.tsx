@@ -145,5 +145,5 @@ export default function Iridescence({
     };
   }, [color, speed, amplitude, mouseReact]);
 
-  return <div ref={ctnDom} className="w-full h-full" {...rest} />;
+  return <div ref={ctnDom} className="w-full h-full fixed inset-0 -z-10 pointer-events-none" {...rest} />;
 }

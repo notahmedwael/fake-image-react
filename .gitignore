@@ -43,3 +43,4 @@ dist-ssr
 
 # Server model files (don't upload large weights to Git)
 server/models/
+.vercel
