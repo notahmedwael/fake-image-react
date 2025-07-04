@@ -1,4 +1,3 @@
-import { FadeContent, Bounce } from '@appletosolutions/reactbits';
 import RotatingText from '../src/blocks/TextAnimations/RotatingText/RotatingText';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/white-logo.png';
@@ -20,24 +19,27 @@ const Home = () => {
     >
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Section */}
-        <div className="flex flex-col items-center text-center gap-10 max-w-xl px-4">
-          <FadeContent duration={1200}>
-            <div className="text-3xl sm:text-4xl font-bold leading-snug">
-              ever came across an image that made you doubt if it's
-              <RotatingText
-                texts={['Real ✅', 'Fake ❌', 'Uncertain 🤔']}
-                mainClassName="mt-4 px-3 text-3xl text-white overflow-hidden py-1 justify-center rounded-lg"
-                staggerFrom="last"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={3000}
-              />
-            </div>
-          </FadeContent>
+        <motion.div
+          className="flex flex-col items-center text-center gap-10 max-w-xl px-4"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+        >
+          <div className="text-3xl sm:text-4xl font-bold leading-snug">
+            ever came across an image that made you doubt if it's
+            <RotatingText
+              texts={['Real ✅', 'Fake ❌', 'Uncertain 🤔']}
+              mainClassName="mt-4 px-3 text-3xl text-white overflow-hidden py-1 justify-center rounded-lg"
+              staggerFrom="last"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={3000}
+            />
+          </div>
 
           <button
             type="button"
@@ -52,16 +54,22 @@ const Home = () => {
               Explore!
             </span>
           </button>
-        </div>
+        </motion.div>
 
-        {/* Right Section (Logo) */}
-        <Bounce>
-          <img
-            src={logo}
-            alt="Fake Image Logo"
-            className="h-48 w-48 sm:h-64 sm:w-64 md:h-[28rem] md:w-[28rem] object-contain"
-          />
-        </Bounce>
+        {/* Right Section (Logo with bounce) */}
+        <motion.img
+          src={logo}
+          alt="Fake Image Logo"
+          className="h-48 w-48 sm:h-64 sm:w-64 md:h-[28rem] md:w-[28rem] object-contain"
+          animate={{
+            y: [0, -20, 0], // bounce
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: "easeInOut",
+          }}
+        />
       </div>
     </motion.div>
   );

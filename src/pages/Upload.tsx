@@ -382,12 +382,13 @@ const Upload: React.FC = () => {
               </motion.div>
             )}
             {predictions.length > 0 && (
-              <motion.div
-                className="h-full overflow-y-auto"
-                style={{ scrollBehavior: 'smooth' }}
-              >
-                <Prediction predictions={predictions} />
-              </motion.div>
+              <div style={{ scrollBehavior: 'smooth' }}>
+                <motion.div
+                  className="h-full overflow-y-auto"
+                >
+                  <Prediction predictions={predictions} />
+                </motion.div>
+              </div>
             )}
           </section>
         </main>

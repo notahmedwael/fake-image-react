@@ -2,8 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Layout from './components/Layout';
 import Iridescence from './src/blocks/Backgrounds/Iridescence/Iridescence';
@@ -23,8 +21,6 @@ const App = () => {
       <Route path="/" element={<Layout><Home /></Layout>} />
       <Route path="/about" element={<Layout><About /></Layout>} />
       <Route path="/contact-us" element={<Layout><ContactUs /></Layout>} />
-      <Route path="/login" element={<Layout><Login /></Layout>} />
-      <Route path="/signup" element={<Layout><Signup /></Layout>} />
       <Route path="/upload" element={<Layout><Upload /></Layout>} />
       <Route path="*" element={<Layout><h1>404 Not Found</h1></Layout>} />
     </Routes>
