@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; // Use "motion/react" if you're using motion+react combo
+import { motion } from "framer-motion";
 
 function LoadingCircleSpinner() {
 return (

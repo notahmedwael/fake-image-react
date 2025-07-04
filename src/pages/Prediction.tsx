@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 interface PredictionProps {
-  predictions: Array<{ filename: string; label: string; confidence: number; objectURL: string | undefined }>;
+predictions: Array<{ filename: string; label: string; confidence: number; objectURL: string | undefined }>;
 }
 
 const Prediction: React.FC<PredictionProps> = ({ predictions }) => {
