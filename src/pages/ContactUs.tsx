@@ -21,7 +21,9 @@ const ContactUs = () => {
     formData.append('message', message);
 
     try {
-      await axios.post('http://localhost:8000/contact/', formData);
+      await axios.post('http://localhost:8000/contact/', formData, {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      });
       setStatus('Message sent successfully!');
       setName('');
       setEmail('');

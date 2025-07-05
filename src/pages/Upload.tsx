@@ -346,7 +346,7 @@ const Upload: React.FC = () => {
           {/* Prediction Section */}
           <section
             ref={predictionRef}
-            className="w-full h-screen bg-white shadow-xl rounded-md p-8 overflow-hidden transition-all duration-300"
+            className="w-full h-screen bg-white shadow-xl rounded-md p-8 overflow-scroll transition-all duration-300"
             style={{ display: predictions.length > 0 ? 'block' : 'none' }}
           >
             {isLoading && (

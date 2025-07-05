@@ -1,46 +1,42 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Dependencies
+# -------------------------
+# Node / React Frontend
+# -------------------------
 node_modules/
-
-# Build output (React-specific)
-build/
-
-# Environment variables
+dist/
+.vite/
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.log
 
-# Local development files
-*.local
+# -------------------------
+# Python / FastAPI Backend
+# -------------------------
+server/venv/
+server/__pycache__/
+server/*.pyc
+*.pyc
+__pycache__/
+*.pyo
 
-# Dist and SSR (if used by your setup, otherwise remove)
-dist
-dist-ssr
+# Exclude models (large files)
+server/models/
+!server/models/.gitkeep  # keep folder but not contents (optional)
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# -------------------------
+# IDE / OS Junk
+# -------------------------
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+.vscode/
+.idea/
 
-# Optional: TypeScript build info (if using TypeScript)
+# -------------------------
+# TypeScript
+# -------------------------
 *.tsbuildinfo
 
-# Server model files (don't upload large weights to Git)
-server/models/
-.vercel
+# -------------------------
+# Git
+# -------------------------
+.git/
+.gitignore
